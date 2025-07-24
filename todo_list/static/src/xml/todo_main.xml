@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="todo_list.TodoListMain">
+        <div class="container mt-2">
+            <h1 class="text-center text-bold text-primary">Todo List</h1>
+            <div class="todo_list d-flex flex-column align-items-start">
+                <div class="w-100 d-flex flex-row gap-3">
+                    <input class="form-control" placeholder="Add Todo Item" t-model="state.input" t-on-keypress="onAddTodo" />
+                    <button class="btn btn-primary" t-on-click="onAddTodo">Add Todo</button>
+                </div>
+                <TodoList todos="state.todos"/>
+            </div>
+        </div>
+    </t>
+</templates>
