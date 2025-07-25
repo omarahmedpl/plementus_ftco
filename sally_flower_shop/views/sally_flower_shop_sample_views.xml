@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="product_template_only_form_view" model="ir.ui.view">
-        <field name="name">product.template.only.form.inherit</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_only_form_view"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='barcode']" position="after">
-                <field name="is_flower_category" invisible="1"/>
-                <field name="flower_id" invisible="not is_flower_category"/>
-                <field name="last_watered_date" invisible="not is_flower_category"/>
-            </xpath>
-        </field>
-    </record>
+
     <record id="product_product_only_form_view" model="ir.ui.view">
         <field name="name">product.product.only.form.inherit</field>
         <field name="model">product.product</field>
