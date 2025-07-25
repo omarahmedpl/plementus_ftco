@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="sally_flower_pos.FlowerInfoPopup" owl="1">
+        <div class="popup flower-info-popup">
+            <div class="modal-header">
+                <h4 class="modal-title"><t t-esc="props.title"/></h4>
+                <div class="btn" t-on-click="cancel">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <main class="body modal-body overflow-auto">
+                <!-- Flower Info Title Section -->
+                <div class="section-product-info-title d-flex flex-column flex-sm-row text-start gap-3 text-info bg-opacity-25 mx-n3 mt-n3 p-3 bg-info">
+                    <div class="d-flex flex-column flex-grow-1 text-start w-100 w-sm-50">
+                        <span class="global-info-title fs-2 fw-bolder text-truncate" t-esc="props.product.display_name"/>
+                        <span class="fs-3" t-if="props.product.default_code or product.barcode">
+                            <t t-if="props.product.default_code" t-esc="props.product.default_code"/> 
+                            <t t-if="props.product.default_code and props.product.barcode"> - </t>
+                            <t t-if="props.product.barcode" t-esc="props.product.barcode"/>
+                        </span>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center text-start text-sm-end w-100 w-sm-50">
+                        <span class="global-info-title fs-2 fw-bolder" t-esc="env.utils.formatCurrency(props.product.lst_price)"/>
+                        <span class="fs-3" t-esc="props.product.currency_id?.[1]"/>
+                    </div>
+                </div>
+
+                <!-- Botanical Details -->
+                <div class="section-financials mt-3 mb-4 pb-4 border-bottom text-start">
+                    <h3 class="section-title">Botanical Details</h3>
+                    <div class="section-financials-body d-flex flex-column flex-sm-row">
+                        <table class="table table-borderless mb-0">
+                            <tr>
+                                <td>Common Name:</td>
+                                <td><t t-esc="state.flower?.common_name || 'N/A'"/></td>
+                            </tr>
+                            <tr>
+                                <td>Scientific Name:</td>
+                                <td><t t-esc="state.flower?.scientific_name || 'N/A'"/></td>
+                            </tr>
+                            <tr>
+                                <td>Season Start:</td>
+                                <td><t t-esc="state.flower?.season_start || 'N/A'"/></td>
+                            </tr>
+                            <tr>
+                                <td>Season End:</td>
+                                <td><t t-esc="state.flower?.season_end || 'N/A'"/></td>
+                            </tr>
+                        </table>
+                        <table class="table table-borderless">
+                            <tr>
+                                <td>Watering Frequency:</td>
+                                <td><t t-esc="state.flower?.watering_frequency || 0"/> days</td>
+                            </tr>
+                            <tr>
+                                <td>Watering Amount:</td>
+                                <td><t t-esc="state.flower?.watering_amount || 0"/> ml</td>
+                            </tr>
+                            <tr>
+                                <td>Stock:</td>
+                                <td><t t-esc="props.product.qty_available"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </t>
+</templates>
