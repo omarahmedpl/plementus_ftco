@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="sally_flower_pos.FlowerAddonButton">
+        <button class="control-button" t-on-click="onClick">
+            <i class="fa fa-magic"/>
+            Add Flower Add-Ons
+        </button>
+    </t>
+</templates>

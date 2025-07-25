@@ -15,6 +15,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/sally_flower_shop_sample_views.xml',
+        'views/flower_addon_view.xml',
         'data/pos_category.xml',
     ],
     "assets": {

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="sally_flower_pos.FlowerAddonsPopup" owl="1">
+        <div class="popup popup-sm">
+            <div class="popup-body p-4">
+                <h3>Select Add-Ons</h3>
+                <ul>
+                    <t t-foreach="state.addons" t-as="addon" t-key="addon.id">
+                        <li>
+                            <label class="d-flex flex-row align-items-center">
+                                <input type="checkbox"
+                                       class="me-2"
+                                       t-on-click="() => this.toggleAddon(addon)"
+                                       t-att-checked="state.selectedAddons.has(addon)"/>
+                                <t t-esc="addon.name"/>
+                                (+<t t-esc="addon.price"/>)
+                            </label>
+                        </li>
+                    </t>
+                </ul>
+            </div>
+            <div class="popup-footer pb-4">
+                <button class="btn btn-secondary me-3" t-on-click="cancel">Cancel</button>
+                <button type="button" class="btn btn-primary" t-on-click="confirm">Confirm</button>
+            </div>
+        </div>
+    </t>
+</templates>

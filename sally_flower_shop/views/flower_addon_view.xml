@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="flower_addon_view_form" model="ir.ui.view">
+        <field name="name">flower.addon.view.form</field>
+        <field name="model">flower.addon</field>
+        <field name="arch" type="xml">
+            <form string="Flower">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="price"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="flower_addon_view_tree" model="ir.ui.view">
+        <field name="name">flower.addon.view.tree</field>
+        <field name="model">flower.addon</field>
+        <field name="arch" type="xml">
+            <tree string="Addons">
+                <field name="name"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="flower_addon_view_action" model="ir.actions.act_window">
+        <field name="name">Flower Addons</field>
+        <field name="res_model">flower.addon</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="pos_config_flower_addon_menu_submenu"
+              name="Flower Addons"
+              parent="point_of_sale.menu_point_root"
+              action="flower_addon_view_action"/>
+
+</odoo>

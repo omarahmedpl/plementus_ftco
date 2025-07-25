@@ -8,6 +8,7 @@
             <xpath expr="//field[@name='barcode']" position="after">
                 <field name="is_flower_category" invisible="1"/>
                 <field name="flower_id" invisible="not is_flower_category"/>
+                <field name="last_watered_date" invisible="not is_flower_category"/>
             </xpath>
         </field>
     </record>
@@ -19,6 +20,7 @@
             <xpath expr="//field[@name='barcode']" position="after">
                 <field name="is_flower_category" invisible="1"/>
                 <field name="flower_id" invisible="not is_flower_category"/>
+                <field name="last_watered_date" invisible="not is_flower_category"/>
             </xpath>
         </field>
     </record>

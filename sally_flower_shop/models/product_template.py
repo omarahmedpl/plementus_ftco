@@ -1,4 +1,5 @@
-from odoo import fields, models , api
+from odoo import fields, models, api
+
 
 class ProductProduct(models.Model):
     _inherit = 'product.template'
@@ -8,6 +9,7 @@ class ProductProduct(models.Model):
         compute='_compute_is_flower_category',
         help="Indicates if the product is in the Flowers category"
     )
+    last_watered_date = fields.Datetime()
 
     @api.depends('pos_categ_ids')
     def _compute_is_flower_category(self):

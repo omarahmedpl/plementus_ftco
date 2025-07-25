@@ -25,6 +25,7 @@ export class FlowerInfoPopup extends AbstractAwaitablePopup {
     }
 
     async _loadFlowerData() {
+        console.log(this.state.product)
         const flowerId = this.state.product.flower_id ? this.state.product.flower_id[0] : false;
         console.log(flowerId)
         if (flowerId) {
@@ -43,15 +44,5 @@ export class FlowerInfoPopup extends AbstractAwaitablePopup {
                 console.error("Error loading flower data:", error);
             }
         }
-    }
-
-    searchSimilarFlowers(flowerName) {
-        this.pos.setSelectedCategoryId(0);
-        this.pos.searchProductWord = flowerName;
-        this.cancel();
-    }
-
-    isAvailableInStock() {
-        return this.state.product?.qty_available > 0;
     }
 }
